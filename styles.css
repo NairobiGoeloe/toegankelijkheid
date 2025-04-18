@@ -1,0 +1,514 @@
+:root {
+    --primary: #005fcc;
+    --secondary: #e0e0e0;
+    --danger: #d32f2f;
+    --focus-outline: 3px solid #ff9800;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1rem;
+    line-height: 1.6;
+    background: #f9f9f9;
+    color: #333;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.25rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+/*-------------------------------------------------------------------------------------------Knoppen*/
+  button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+
+  .primary {
+    background: #0B4071;
+    color: white;
+    border-radius: 50px;
+    width: 150px; 
+  }
+  .primary:hover{
+    background: #628BB1;
+    color: rgb(255, 255, 255);
+  }
+  .primary:focus {
+    outline: var(--focus-outline);
+  }
+
+  .secondary {
+    background: #095E63;
+    color: rgb(255, 255, 255);
+    border-radius: 50px;
+    width: 150px; 
+  }
+  .secondary:hover{
+    background: #7AA6A8;
+    color: rgb(255, 255, 255);
+  }
+  .secondary:focus {
+    outline: var(--focus-outline);
+  }
+
+  .danger {
+    background: #fff;
+    color: #0B4071;
+    border: 2px solid #0B4071; 
+    border-radius: 50px;
+    width: 150px;
+    box-sizing: border-box; 
+    padding: 10px;
+  }
+  .danger:hover {
+    color: #7AA6A8;
+    border: 2px solid #7AA6A8; 
+  }
+  .danger:focus {
+    outline: var(--focus-outline);
+  }
+
+  .icon-button{
+    background: #0B4071;
+    color: #ffffff;
+    width: 100px;
+    border-radius: 50px;
+    box-sizing: border-box; 
+    padding: 10px;
+  }
+  .icon-button:hover{
+    background: #7AA6A8;
+  }
+  .icon-button:focus{
+    outline: var(--focus-outline);
+  }
+
+/*-------------------------------------------------------------------------------------------Menu*/
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    cursor: pointer;
+  }
+  .hamburger:focus {
+    outline: var(--focus-outline);
+  }
+  
+  .nav-links {
+    display: flex;
+    flex: 1;
+    height: 100%;
+  }
+  
+  @media (max-width: 900px) {
+  
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100%;
+      width: 100%;
+      border-radius: 25px;
+    }
+  
+    .hamburger {
+      display: block;
+      align-self: flex-end;
+      height: 60px;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+    }
+  
+    .nav-links a {
+      padding: 1rem;
+      height: auto; /* overschrijft de 100% */
+    }
+
+    .nav-links a:first-child:hover,
+    .nav-links a:first-child:focus {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+    
+    .nav-links a:last-child:hover,
+    .nav-links a:last-child:focus {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 25px;
+      border-bottom-left-radius: 25px;
+    }
+
+    .navbar.open .nav-links {
+      display: flex;
+    }
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0B4071;
+    background:  #0B4071;
+    color: white;
+    margin-bottom: 2rem;
+    height: 60px;
+    max-width: 800px;
+    width: 100%;
+    border-radius: 25px;
+    align-items: center;
+  }
+
+  nav a {
+    flex: 1; /* Elk a-element neemt gelijke ruimte */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    height: 100%; 
+  }
+
+  nav a:first-child:hover,
+  nav a:first-child:focus {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+  nav a:last-child:hover,
+  nav a:last-child:focus {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+  nav a:hover{
+    background: #7AA6A8;
+  }
+  nav a:focus {
+    background: #7AA6A8;
+    outline: var(--focus-outline);
+    outline-offset: 0;
+  }   
+  nav a[aria-current="page"]{
+    text-decoration: underline;
+  }
+
+  /*-------------------------------------------------------------------------------------------Zoekbalk*/
+  /* Verborgen label voor screenreaders */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+    border: 2px solid #0B4071;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    width: 500px;
+    background-color: white;
+  }
+
+  input::placeholder {
+    color:#0B4071;
+  }
+  
+  .search-box input[type="search"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    color: #0B4071;
+  }
+  
+  .search-box button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color:#0B4071;
+    padding: 0;
+    margin-left: 0.5rem;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 0;
+  }
+  .search-box button:focus {
+    outline: var(--focus-outline);
+  }
+
+  /*-------------------------------------------------------------------------------------------Kaarten*/
+  @media (max-width: 600px) {
+    .card-grid {
+      flex-direction: column;
+    }
+  }
+  .card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 1rem;
+    height: 215px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .card h3 {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  
+  .card-subtitle {
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+    color: #555;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    margin: 0.5rem 0 1rem;
+  }
+  
+  .card-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+  
+  .button {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin: 0;
+    height: 44px;
+  }
+  
+  .button.info {
+    background-color: #0B4071;
+  }
+  .button.info:focus {
+    outline: var(--focus-outline);
+  }
+  .button.info:hover{
+    background-color: #628BB1;
+  }
+  
+  .button.signup {
+    background-color: #095B5B;
+  }
+  .button.signup:focus {
+    outline: var(--focus-outline);
+  }
+  .button.signup:hover {
+    background-color: #7AA6A8;
+  }
+  
+  /* Focus voor toegankelijkheid */
+  .card:focus {
+    outline: var(--focus-outline);
+  }
+  
+  /* Responsief */
+  @media (max-width: 768px) {
+    .card-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 90%;
+    }
+  }
+  
+  /*-------------------------------------------------------------------------------------------Filter*/
+  .filter-nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0B4071;
+    border-radius: 30px;
+    max-width: 800px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .dropdown {
+    position: relative;
+    flex: 1;
+  }
+
+  .filter-nav .dropdown:first-child .dropbtn  {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+   }
+  .filter-nav .dropdown:last-child .dropbtn  {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+   }
+   .dropdown, .filter-nav {
+    overflow: visible;
+  }
+  
+  .dropbtn {
+    width: 100%;
+    height: 60px;
+    background-color: #0B4071;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0;
+    position: relative; /* voeg dit toe */
+  z-index: 1;          /* basis z-index */
+  }
+  .dropbtn:hover{
+    background-color: #7AA6A8;
+  }
+  .dropbtn:focus {
+    outline: var(--focus-outline);
+    z-index: 5;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    color: #0B4071;
+    border-radius: 10px;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 0;
+  }
+  .dropdown-content li {
+    list-style: none;
+  }
+  
+  .dropdown-content button {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #0B4071;
+    margin: 0;
+  }
+  
+  .dropdown-content button:hover {
+    background-color:#0B4071;
+    color: #ffffff;
+  } 
+  .dropdown-content button:focus {
+    outline: var(--focus-outline);
+  } 
+  
+  /* Show dropdown on click via JS */
+  .dropdown.show .dropdown-content {
+    display: block;
+  }
+  
+  /*-------------------------------------------------------------------------------------------Iconen*/
+  .accessibility-tools {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .access-btn {
+    width: 44px;
+    height: 44px;
+    background-color: #0B4071;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .access-btn:hover{
+    background-color: #628BB1;
+    outline: none;
+  }
+  .access-btn:focus {
+    outline: var(--focus-outline);
+  }
+  
+  /*-------------------------------------------------------------------------------------------Dark-mode*/
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  body.dark-mode section {
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+  body.dark-mode .card-content h3,
+  body.dark-mode .card-content p {
+    color: rgb(0, 0, 0);
+  }
+  body.dark-mode .card-content h4
+  {
+    color: #555;
+  }
+

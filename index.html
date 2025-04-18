@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toegankelijke Componenten</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <h1>Toegankelijke UI-componenten</h1>
+  <p>Op deze pagina worden veelgebruikte interfacecomponenten getoond met uitleg over de richtlijnen en principes voor toegankelijkheid en gebruiksvriendelijkheid.</p>
+
+  <section id="knoppen">
+    <h2>Knoppen</h2>
+    <button class="primary">Bewerken</button>
+    <button class="secondary">Opslaan</button>
+    <button class="danger">Verwijderen</button>
+    <button class="icon-button" aria-label="home">
+        <i class="fa-solid fa-house"></i>
+    </button>
+    <p>Toegepaste Richtlijnen: 
+      <ul aria-live="polite">
+        <li>Volledig bedienbaar met toetsenbord (Tab, Enter, Spatie) door &lt;button&gt;-element </li>
+        <li>Minimaal 44x44px (touch target).</li>
+        <li>Hoog contrast tussen tekst en achtergrond (minimaal 4.5:1).</li>
+        <li>Consistente styling per knoptype (primary, secondary, danger).</li>
+        <li>Aria-label voor knop met alleen een icoon.</li>
+      </ul>
+    </p>
+  </section>
+
+  <section id="navbar">
+    <h2>Navbar</h2>
+    <nav class="navbar">
+        <button class="hamburger" aria-label="Menu openen" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="nav-links">
+          <a href="componenten.html" aria-current="page">Home</a>
+          <a href="#">Overzicht</a>
+          <a href="#">Informatie</a>
+          <a href="#">Contact</a>
+          <a href="#">Help</a>
+        </div>
+      </nav>
+    <p>Toegepaste Richtlijnen:
+      <ul>
+        <li>Gebruik van &lt;nav&gt;-element voor semantische structuur.</li>
+        <li>Duidelijk visueel onderscheid tussen actieve, inactieve en hover-states.</li>
+        <li>Actieve pagina aangeduid met aria-current="page".</li>
+        <li>Toegankelijk met toetsenbord door &lt;a href="#"&gt;-element</li>
+        <li>Responsief gedrag door hamburgermenu.</li>
+      </ul>
+    </p>
+  </section>
+
+  <section id="zoekbalk">
+    <h2>Zoekbalk</h2>
+    <form class="search-form" action="zoekresultaten.html" method="get">
+        <label for="zoek" class="sr-only">Zoeken</label>
+        <div class="search-box">
+            <button type="submit" aria-label="Zoekopdracht uitvoeren">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+          <input type="search" id="zoek" name="q" placeholder="Zoek" required aria-label="Voer zoekopdracht in">
+        </div>
+      </form>
+    <p>Toegepaste Richtlijnen:
+      <ul>
+        <li>Hidden label aanwezig voor inputveld.</li>
+        <li>Toegankelijk via toetsenbord (Enter).</li>
+        <li>Icon heeft aria-labels.</li>
+        <li>Voldoende padding en contrast.</li>
+      </ul>
+    </p>
+  </section>
+
+  <section id="kaarten">
+    <h2>Kaarten</h2>
+    <div class="card-grid">
+      <article class="card" tabindex="0" role="button">
+        <img src="/afbeelding/yoga.jpg" alt="Beschrijving van de afbeelding" class="card-image" />
+        <div class="card-content">
+          <h3>Titel 1</h3>
+          <h4 class="card-subtitle">Subtitel</h4>
+          <p>Lorem ipsum dolor sit amet consectetur. Luctus tincidunt odio.</p>
+          <div class="card-buttons">
+            <button class="button info">Meer Info</button>
+            <button class="button signup">Aanmelden</button>
+          </div>
+        </div>
+      </article>
+  
+      <article class="card" tabindex="0" role="button">
+        <img src="/afbeelding/yoga.jpg" alt="Beschrijving van afbeelding 2" class="card-image" />
+        <div class="card-content">
+          <h3>Titel 2</h3>
+          <h4 class="card-subtitle">Subtitel</h4>
+          <p>Lorem ipsum dolor sit amet consectetur. Luctus tincidunt odio.</p>
+          <div class="card-buttons">
+            <button class="button info">Meer Info</button>
+            <button class="button signup">Aanmelden</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button">
+        <img src="/afbeelding/yoga.jpg" alt="Beschrijving van afbeelding 2" class="card-image" />
+        <div class="card-content">
+          <h3>Titel 3</h3>
+          <h4 class="card-subtitle">Subtitel</h4>
+          <p>Lorem ipsum dolor sit amet consectetur. Luctus tincidunt odio.</p>
+          <div class="card-buttons">
+            <button class="button info">Meer Info</button>
+            <button class="button signup">Aanmelden</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button">
+        <img src="/afbeelding/yoga.jpg" alt="Beschrijving van afbeelding 2" class="card-image" />
+        <div class="card-content">
+          <h3>Titel 4</h3>
+          <h4 class="card-subtitle">Subtitel</h4>
+          <p>Lorem ipsum dolor sit amet consectetur. Luctus tincidunt odio.</p>
+          <div class="card-buttons">
+            <button class="button info">Meer Info</button>
+            <button class="button signup">Aanmelden</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button">
+        <img src="/afbeelding/yoga.jpg" alt="Beschrijving van afbeelding 2" class="card-image" />
+        <div class="card-content">
+          <h3>Titel 5</h3>
+          <h4 class="card-subtitle">Subtitel</h4>
+          <p>Lorem ipsum dolor sit amet consectetur. Luctus tincidunt odio.</p>
+          <div class="card-buttons">
+            <button class="button info">Meer Info</button>
+            <button class="button signup">Aanmelden</button>
+          </div>
+        </div>
+      </article>
+    </div>
+    
+    <div class="toegankelijkheidsinfo">
+      <p>Toegepaste Richtlijnen:</p>
+      <ul>
+        <li>Gebruik van &lt;h3&gt;, &lt;h4&gt; en &lt;p&gt; voor duidelijke structuur.</li>
+        <li>Gebruik van &lt;article&gt; zodat schermlezers blokken content kunnen herkennen en er vlot doorheen kunnen navigeren.</li>
+        <li>Kaarten zijn toetsenbordtoegankelijk met tab reageren op Enter dankzij role="button".</li>
+        <li>Responsief ontwerp voor mobiel.</li>
+      </ul>
+    </div>
+  </section>
+  
+
+  <section id="filters">
+    <h2>Filters</h2>
+    <div class="filter-nav">
+        <div class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Les</button>
+          <ul class="dropdown-content" role="menu">
+            <li><button>Bootcamp</button></li>
+            <li><button>Yoga</button></li>
+            <li><button>Zumba</button></li>
+          </ul>
+        </div>
+      
+        <div class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Niveau</button>
+          <ul class="dropdown-content" role="menu">
+            <li><button>Beginner</button></li>
+            <li><button>Gevorderd</button></li>
+            <li><button>Expert</button></li>
+          </ul>
+        </div>
+      
+        <div class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Dag</button>
+          <ul class="dropdown-content" role="menu">
+            <li><button>Maandag</button></li>
+            <li><button>Dinsdag</button></li>
+            <li><button>Woensdag</button></li>
+            <li><button>Donderdag</button></li>
+            <li><button>Vrijdag</button></li>
+            <li><button>Zaterdag</button></li>
+          </ul>
+        </div>
+      
+        <div class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Tijd</button>
+          <ul class="dropdown-content" role="menu">
+            <li><button>Ochtend</button></li>
+            <li><button>Middag</button></li>
+            <li><button>Avond</button></li>
+          </ul>
+        </div>
+    </div>
+      
+    <p>Toegepaste Richtlijnen:
+      <ul>
+        <li>Voldoende ruimte tussen elementen.</li>
+        <li>Toegankelijk via screenreaders en toetsenbord.</li>
+        <li>Duidelijke labels bij checkboxen.</li>
+      </ul>
+    </p>
+  </section>
+
+  <section id="iconen">
+    <h2>Iconen</h2>
+    <div class="accessibility-tools" aria-label="Toegankelijkheidsopties" role="toolbar">
+      <button id="toggle-theme" class="access-btn" title="Licht/donker modus">
+        <i class="fas fa-adjust"></i>
+      </button>
+      <button id="zoom-in" class="access-btn" title="Inzoomen">
+        <i class="fas fa-search-plus"></i>
+      </button>
+      <button id="zoom-out" class="access-btn" title="Uitzoomen">
+        <i class="fas fa-search-minus"></i>
+      </button>
+      <button id="toggle-font-size" class="access-btn" title="Klein/groot lettertype">
+        <i class="fas fa-font"></i>
+      </button>
+      <button id="read-text" class="access-btn" title="Tekst voorlezen">
+        <i class="fas fa-volume-up"></i>
+      </button>
+    </div>
+    
+    <p>Toegepaste Richtlijnen:
+      <ul>
+        <li>Gebruik van aria-label voor betekenis.</li>
+        <li>Niet alleen kleur, maar ook tekst of tooltip voor context.</li>
+      </ul>
+    </p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zoekresultaten</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .zoekresultaat { margin-top: 1rem; }
+    .resultaat-item { margin-bottom: 1rem; border-bottom: 1px solid #ccc; padding-bottom: 1rem; }
+    .geen-resultaten { color: #900; margin-top: 2rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h1 id="zoekterm">Zoekresultaten</h1>
+  <div id="zoekresultaten" class="zoekresultaat"></div>
+
+  <script>
+    const zoekdata = [
+      {
+        titel: "Knoppen",
+        beschrijving: "Toegankelijke knoppen met toetsenbordbediening, ARIA-labels en juiste contrastverhoudingen.",
+        link: "componenten.html#knoppen"
+      },
+      {
+        titel: "Navbar",
+        beschrijving: "Een toegankelijke navigatiebalk met aria-current, duidelijke structuur en toetsenbordbediening.",
+        link: "componenten.html#navbar"
+      },
+      {
+        titel: "Zoekbalk",
+        beschrijving: "Een toegankelijke zoekfunctie met verborgen label, toetsenbordondersteuning en contrast.",
+        link: "componenten.html#zoekbalk"
+      },
+      {
+        titel: "Kaarten",
+        beschrijving: "Focusbare, semantisch correcte informatieve kaarten met artikelstructuur.",
+        link: "componenten.html#kaarten"
+      },
+      {
+        titel: "Filters",
+        beschrijving: "Toegankelijke filters met fieldset, legend en checkboxen met labels.",
+        link: "componenten.html#filters"
+      },
+      {
+        titel: "Iconen",
+        beschrijving: "Iconen met betekenisvolle aria-labels en ondersteuning voor screenreaders.",
+        link: "componenten.html#iconen"
+      }
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const zoekterm = params.get("q")?.toLowerCase();
+    const resultDiv = document.getElementById("zoekresultaten");
+    const heading = document.getElementById("zoekterm");
+
+    if (zoekterm) {
+      heading.textContent = `Zoekresultaten voor: "${zoekterm}"`;
+      const resultaten = zoekdata.filter(item =>
+        item.titel.toLowerCase().includes(zoekterm) ||
+        item.beschrijving.toLowerCase().includes(zoekterm)
+      );
+
+      if (resultaten.length > 0) {
+        resultaten.forEach(resultaat => {
+          resultDiv.innerHTML += `
+            <div class="resultaat-item">
+              <h2><a href="${resultaat.link}">${resultaat.titel}</a></h2>
+              <p>${resultaat.beschrijving}</p>
+            </div>
+          `;
+        });
+      } else {
+        resultDiv.innerHTML = `<p class="geen-resultaten">Geen resultaten gevonden voor "${zoekterm}".</p>
+        <a href="index.html" class="terug-link">← Ga Terug</a>`;
+      }
+    } else {
+      heading.textContent = "Geen zoekterm opgegeven.";
+    }
+  </script>
+
+</body>
+</html>
