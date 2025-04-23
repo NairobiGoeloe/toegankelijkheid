@@ -97,6 +97,16 @@
     outline: var(--focus-outline);
   }
 
+@media (max-width: 600px) {
+    .button-group {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .button-group button {
+      width: 100%;
+    }
+  }
 /*-------------------------------------------------------------------------------------------Menu*/
   .hamburger {
     display: none;
@@ -227,7 +237,7 @@
     border: 2px solid #0B4071;
     border-radius: 50px;
     padding: 0.5rem 1rem;
-    width: 500px;
+    max-width: 300px;
     background-color: white;
   }
 
@@ -264,11 +274,6 @@
   }
 
   /*-------------------------------------------------------------------------------------------Kaarten*/
-  @media (max-width: 600px) {
-    .card-grid {
-      flex-direction: column;
-    }
-  }
   .card-grid {
     display: flex;
     flex-wrap: wrap;
@@ -462,6 +467,34 @@
   /* Show dropdown on click via JS */
   .dropdown.show .dropdown-content {
     display: block;
+  }
+
+ @media (max-width: 600px) {
+    .dropdown {
+      flex: 1 1 100%; /* Laat elke dropdown op z’n eigen rij staan */
+    }
+  
+    .filter-nav {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .dropbtn {
+      height: 50px;
+      font-size: 0.9rem;
+    }
+
+    .filter-nav .dropdown:first-child .dropbtn  {
+      border-bottom-left-radius: 0px;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+    
+    }
+    .filter-nav .dropdown:last-child .dropbtn  {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+     }
   }
   
   /*-------------------------------------------------------------------------------------------Iconen*/
